@@ -1,0 +1,90 @@
+
+
+/* 🛒 Icône du panier (visible dès l'activation de la page) */
+.btn-shopp {
+  cursor: pointer;
+  color: black; /* Couleur noire dès le début */
+  font-size: 2rem;
+  animation: bounce 1s ease-in-out infinite; /* Animation de balancement */
+
+  /* Effet au survol */
+  &:hover {
+    transform: scale(1.1); /* Légère augmentation de taille au survol */
+    color: #ffcc00; /* Couleur au survol */
+  }
+}
+
+/* 🛒 Badge du panier */
+.p-badge {
+  font-weight: bold;
+  font-size: 0.8rem;
+  background: #ff4d4d;
+}
+
+
+
+/* 📌 Panel menu */
+app-panel-menu {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+  min-height: 100%;
+}
+
+
+/* 🌀 Animation de mouvement pour l'icône du panier */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 🌀 Animation pour les menus */
+@keyframes moveMenu {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px); /* Déplace le menu légèrement */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 📱 Menu avec animation de survol */
+p-panelmenu .p-menuitem {
+  transition: transform 0.3s ease-in-out; /* Animation fluide */
+}
+
+p-panelmenu .p-menuitem:hover {
+  transform: translateX(5px); /* Déplace légèrement les éléments au survol */
+  background-color: #252542; /* Fond foncé lors du survol */
+  color: #ffcc00; /* Changement de couleur du texte */
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  p-toolbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app-content {
+    padding: 10px;
+  }
+}

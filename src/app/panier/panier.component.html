@@ -1,0 +1,23 @@
+<div>
+
+
+    <div *ngFor="let item of card()" class="contener">
+        {{item.name}}
+        {{item.price}}
+        {{item.category}}
+        {{item.quantity}}
+    
+    
+        <div class="btn">
+    
+        <button (click)="deleteproduct(item.id)"> Delete ♻</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

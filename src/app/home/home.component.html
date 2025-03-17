@@ -1,0 +1,18 @@
+<div class="home-container">
+  <p-card class="welcome-card">
+    <ng-template pTemplate="header">
+      <div class="welcome-header">
+        <i class="pi pi-shopping-cart"></i>
+        <span>Bienvenue</span>
+      </div>
+    </ng-template>
+
+    <p class="welcome-message">
+      Bienvenue sur <strong>{{ appTitle }}</strong> ! Découvrez nos meilleurs produits et offres exceptionnelles.
+    </p>
+
+    <ng-template pTemplate="footer">
+      <p-button label="Explorer" icon="pi pi-arrow-right" (onClick)="goToProducts()" severity="primary"></p-button>
+    </ng-template>
+  </p-card>
+</div>

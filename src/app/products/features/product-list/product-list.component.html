@@ -1,0 +1,50 @@
+<h1 class="text-center">Liste des produits</h1>
+<p-button label="Créer produit" (onClick)="onCreate()" class="block text-center" />
+
+<div class="card">
+  <p-dataView #dv [value]="products()" [rows]="5">
+    <ng-template pTemplate="list" let-products>
+      <div class="grid grid-cols-12 gap-4 grid-nogutter">
+        <div *ngFor="let item of products" class="col-span-12 product-item">
+          <div class="flex flex-col sm:flex-row sm:items-center p-6 gap-4">
+            
+            <!-- Image du produit -->
+            <div class="product-image">
+              <img [src]="item.image" [alt]="item.name">
+            </div>
+
+            <!-- Détails du produit -->
+            <div class="product-details">
+              <div class="product-name">{{ item.name }}</div>
+              <div class="product-category">Catégorie : {{ item.category }}</div>
+              <div class="product-quantity">Quantité en stock : {{ item.quantity }}</div>
+              <div class="product-rating">{{ item.rating }} ⭐</div>
+              <div class="product-price">{{ item.price}}</div>
+            </div>
+
+            <!-- Actions : Boutons  [disabled]="item.quantity ===0 permet si la quantité est égal a 0 il ne l'ajoute pas " -->
+            <div class="product-actions">
+              <p-button
+                        severity="info"
+                        label=" Ajouter "
+                        icon="pi pi-shopping-cart"
+                         
+                        [disabled]=" item.quantity == 0 "
+                        (onClick)="addToCart(item)"
+                        class="btn"/>
+              <p-button label="Modifier" severity="secondary" (onClick)="onUpdate(item)" />
+              <p-button label="Supprimer" severity="danger" (onClick)="onDelete(item)" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>
+
+<!-- Dialog pour l'ajout/modification -->
+<p-dialog [(visible)]="isDialogVisible" [style]="{ width: '50vw' }" header="Ajout/Edition produit">
+  <app-product-form [product]="editedProduct()" (save)="onSave($event)" (cancel)="onCancel()" />
+</p-dialog>
+

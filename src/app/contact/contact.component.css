@@ -1,0 +1,85 @@
+/* Styles de base */
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style des titres */
+  h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles des inputs et textarea */
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Style des labels */
+  label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  /* Messages d'erreur */
+  small {
+    font-size: 0.85rem;
+    margin-top: -5px;
+  }
+  
+  /* Bouton */
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Animation au survol */
+  input:hover, textarea:hover {
+    border-color: #007bff;
+  }
+  
+  /* Ajout d'un effet doux sur les erreurs */
+  small[ngStyle] {
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: block;
+    margin-top: -5px;
+    transition: color 0.3s ease;
+  }
+  
