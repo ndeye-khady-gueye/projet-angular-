@@ -1,0 +1,78 @@
+/* Style général du conteneur */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Style des images */
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-image:hover {
+    transform: scale(1.1);
+}
+
+/* Style du tableau PrimeNG */
+.p-datatable {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Style des cellules et en-têtes */
+.p-datatable thead th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+}
+
+.p-datatable tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.p-datatable tbody tr:hover {
+    background: #e9ecef;
+}
+
+/* Style des boutons */
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .product-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-delete {
+        padding: 3px 8px;
+    }
+}
